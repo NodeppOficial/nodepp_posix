@@ -209,6 +209,7 @@ public: queue_t() noexcept {}
     /*─······································································─*/
     
     bool is_item( NODE* item ) const noexcept {
+        if( item == nullptr ){ return false; }
         auto n = first(); while( n!=nullptr ){
          if( n == item ){ return true; } 
              n = n->next;
