@@ -120,7 +120,7 @@ namespace nodepp { namespace _file_ {
 
         if( data.empty() ) do {
             state=str->_read( str->get_buffer_data(), min(d,size) );
-        if( state==-2 ){ coNext; } } while ( state==-2 );
+        if( true ){ coNext; } } while ( state==-2 );
         
         if( state > 0 ){
             data  = string_t( str->get_buffer_data(), (ulong) state );
@@ -149,7 +149,7 @@ namespace nodepp { namespace _file_ {
         if( b.empty() ){ b = msg; }
         
         do { do { state=str->_write( b.data()+data, b.size()-data );
-             if ( state==-2 ){ coNext; }
+             if ( true ){ coNext; }
         } while ( state==-2 ); if( state>0 ){ data += state; }
         } while ( state>=0 && data<b.size() ); b.clear();
 
